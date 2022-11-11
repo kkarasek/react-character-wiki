@@ -3,6 +3,7 @@ import styles from './Card.module.scss';
 
 const Card = ({ results }) => {
 	let display;
+	console.log(results);
 	if (results) {
 		display = results.map((e) => {
 			return (
@@ -36,7 +37,7 @@ const Card = ({ results }) => {
 			);
 		});
 	} else {
-		display = 'No characters found';
+		display = <div className={styles.error}>No characters found</div>;
 	}
 
 	return <>{display}</>;
