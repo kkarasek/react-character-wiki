@@ -1,7 +1,6 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
-import { Button } from 'bootstrap/dist/js/bootstrap';
 import { useState, useEffect } from 'react';
 
 import './App.css';
@@ -14,9 +13,12 @@ function App() {
 	const [pageNumber, setPageNumber] = useState(1);
 	const [fetchedData, setFetchedData] = useState('');
 	const [search, setSearch] = useState('');
+	const [status, setStatus] = useState('');
+	const [species, setSpecies] = useState('');
+	const [gender, setGender] = useState('');
 	let { info, results } = fetchedData;
 
-	const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+	const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
 
 	// useEffect(() => {
 	// 	(async function () {
@@ -47,10 +49,11 @@ function App() {
 			<Search setSearch={setSearch} setPageNumber={setPageNumber} />
 			<div className="container">
 				<div className="row">
-					<div className="col-3">
-						<Filters />
-						<div className=""></div>
-					</div>
+					<Filters
+						setStatus={setStatus}
+						setSpecies={setSpecies}
+						setGender={setGender}
+					/>
 					<div className="col-8">
 						<div className="row">
 							<Card results={results} />
