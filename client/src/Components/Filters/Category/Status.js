@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
 
-const Status = ({ setStatus }) => {
+const Status = ({ setStatus, setPageNumber }) => {
 	let status = ['Alive', 'Dead', 'Unknown'];
 	return (
 		<div className="accordion-item">
@@ -22,7 +22,6 @@ const Status = ({ setStatus }) => {
 			>
 				<div className="accordion-body">
 					{status.map((e, index) => {
-						console.log(`index: ${index}, element: ${e}`);
 						return (
 							<FilterButton
 								key={index}
@@ -30,6 +29,7 @@ const Status = ({ setStatus }) => {
 								items={e}
 								index={index}
 								setFilter={setStatus}
+								setPageNumber={setPageNumber}
 							/>
 						);
 					})}

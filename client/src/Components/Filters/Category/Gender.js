@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
 
-const Gender = ({ setGender }) => {
+const Gender = ({ setGender, setPageNumber }) => {
 	let gender = ['female', 'male', 'genderless', 'unknown'];
 	return (
 		<div className="accordion-item">
@@ -29,6 +29,7 @@ const Gender = ({ setGender }) => {
 							items={e}
 							index={index}
 							setFilter={setGender}
+							setPageNumber={setPageNumber}
 						/>
 					))}
 				</div>

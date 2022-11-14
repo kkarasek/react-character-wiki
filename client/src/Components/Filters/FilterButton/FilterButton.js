@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './FilterButton.module.scss';
 
-const FilterButton = ({ name, index, items, setFilter }) => {
+const FilterButton = ({ name, index, items, setFilter, setPageNumber }) => {
 	return (
 		<div>
 			<div className={`form-check ${styles.input}`}>
@@ -14,7 +14,10 @@ const FilterButton = ({ name, index, items, setFilter }) => {
 				<label
 					className="btn btn-outline-primary"
 					htmlFor={`${name}-${index}`}
-					onClick={(e) => setFilter(e.target.innerText)}
+					onClick={(e) => {
+						setFilter(e.target.innerText);
+						setPageNumber(1);
+					}}
 				>
 					{items}
 				</label>

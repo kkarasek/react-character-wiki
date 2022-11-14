@@ -16,7 +16,7 @@ function App() {
 	const [status, setStatus] = useState('');
 	const [species, setSpecies] = useState('');
 	const [gender, setGender] = useState('');
-	let { info, results } = fetchedData;
+	const { info, results } = fetchedData;
 
 	const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
 
@@ -53,6 +53,7 @@ function App() {
 						setStatus={setStatus}
 						setSpecies={setSpecies}
 						setGender={setGender}
+						setPageNumber={setPageNumber}
 					/>
 					<div className="col-8">
 						<div className="row">

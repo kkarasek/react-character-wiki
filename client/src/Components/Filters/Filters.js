@@ -4,19 +4,25 @@ import Species from './Category/Species';
 import Status from './Category/Status';
 import styles from './Filters.module.scss';
 
-const Filters = ({ setStatus, setSpecies, setGender }) => {
+const Filters = ({ setStatus, setSpecies, setGender, setPageNumber }) => {
 	return (
 		<div className="col-3">
 			<div className="text-center fw-bold fs-4 mb-2">Filters</div>
 			<div
 				className={`text-center text-primary text-decoration-underline mb-4 ${styles.clearFilters}`}
+				onClick={() => {
+					setStatus('');
+					setSpecies('');
+					setGender('');
+					setPageNumber(1);
+				}}
 			>
 				Clear Filters
 			</div>
 			<div className="accordion" id="accordionExample">
-				<Status setStatus={setStatus} />
-				<Species setSpecies={setSpecies} />
-				<Gender setGender={setGender} />
+				<Status setStatus={setStatus} setPageNumber={setPageNumber} />
+				<Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
+				<Gender setGender={setGender} setPageNumber={setPageNumber} />
 			</div>
 		</div>
 	);

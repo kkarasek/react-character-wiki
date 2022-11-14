@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
 
-const Species = ({ setSpecies }) => {
+const Species = ({ setSpecies, setPageNumber }) => {
 	let species = [
 		'Human',
 		'Alien',
@@ -40,6 +40,7 @@ const Species = ({ setSpecies }) => {
 							items={e}
 							index={index}
 							setFilter={setSpecies}
+							setPageNumber={setPageNumber}
 						/>
 					))}
 				</div>
