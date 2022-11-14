@@ -15,6 +15,7 @@ const Filters = ({ setStatus, setSpecies, setGender, setPageNumber }) => {
 					setSpecies('');
 					setGender('');
 					setPageNumber(1);
+					window.location.reload(false);
 				}}
 			>
 				Clear Filters

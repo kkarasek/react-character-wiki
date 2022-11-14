@@ -15,8 +15,8 @@ const FilterButton = ({ name, index, items, setFilter, setPageNumber }) => {
 					className="btn btn-outline-primary"
 					htmlFor={`${name}-${index}`}
 					onClick={(e) => {
-						setFilter(e.target.innerText);
 						setPageNumber(1);
+						setFilter(e.target.innerText);
 					}}
 				>
 					{items}
