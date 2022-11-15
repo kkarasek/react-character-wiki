@@ -7,7 +7,7 @@ const Episodes = () => {
 	const [id, setID] = useState(1);
 	const [fetchedData, setFetchedData] = useState('');
 	const [results, setResults] = useState('');
-	const { air_date, name } = fetchedData;
+	const { air_date, name, episode } = fetchedData;
 
 	const url = `https://rickandmortyapi.com/api/episode/${id}`;
 
@@ -31,11 +31,11 @@ const Episodes = () => {
 			<div className="container">
 				<div className="row m-5">
 					<h1 className="text-center mb-4">
-						Episode :{' '}
 						<span className="text-primary">
 							{name === '' ? 'unknown' : name}
 						</span>
 					</h1>
+					<h5 className="text-center mb-4">{episode}</h5>
 					<h5 className="text-center">
 						Air Date : {air_date === '' ? 'unknown' : air_date}
 					</h5>
