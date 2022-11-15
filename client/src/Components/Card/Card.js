@@ -3,7 +3,6 @@ import styles from './Card.module.scss';
 
 const Card = ({ results }) => {
 	let display;
-	console.log(results);
 	if (results) {
 		display = results.map((e) => {
 			return (

@@ -7,7 +7,7 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container">
-				<Link className="fs-3 navbar-brand">
+				<Link to="/" className="fs-3 fw-bold navbar-brand">
 					Rick & Morty <span className="text-primary">Wiki</span>
 				</Link>
 				<button

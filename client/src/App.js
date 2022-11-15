@@ -55,7 +55,6 @@ const Home = () => {
 		(async function () {
 			const response = await fetch(url);
 			const data = await response.json();
-			console.log('RES:' + data);
 			setFetchedData(data);
 		})();
 	}, [url]);
