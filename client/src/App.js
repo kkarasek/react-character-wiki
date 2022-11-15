@@ -2,14 +2,33 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Card from './Components/Card/Card';
 import Filters from './Components/Filters/Filters';
 import Pagination from './Components/Pagination/Pagination';
 import Search from './Components/Search/Search';
+import Navbar from './Components/Navbar/Navbar';
+import Episodes from './Pages/Episodes';
+import Locations from './Pages/Locations';
 
-function App() {
+const App = () => {
+	return (
+		<Router>
+			<div className="App">
+				<Navbar />
+			</div>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/episodes" element={<Episodes />} />
+				<Route path="/locations" element={<Locations />} />
+			</Routes>
+		</Router>
+	);
+};
+
+const Home = () => {
 	const [pageNumber, setPageNumber] = useState(1);
 	const [fetchedData, setFetchedData] = useState('');
 	const [search, setSearch] = useState('');
@@ -43,9 +62,6 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1 className="text-center my-4">
-				Rick & Morty <span className="text-primary">Wiki</span>
-			</h1>
 			<Search setSearch={setSearch} setPageNumber={setPageNumber} />
 			<div className="container">
 				<div className="row">
@@ -69,6 +85,6 @@ function App() {
 			/>
 		</div>
 	);
-}
+};
 
 export default App;
