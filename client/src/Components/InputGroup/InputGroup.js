@@ -9,7 +9,7 @@ const InputGroup = ({ total, name, setID }) => {
 				className="form-select"
 				id={name}
 			>
-				<option>Choose...</option>
+				<option value="1">Choose...</option>
 				{[...Array(total).keys()].map((e, index) => (
 					<option key={index} value={e + 1}>
 						{name} - {e + 1}
