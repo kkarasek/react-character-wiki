@@ -9,12 +9,12 @@ const InputGroup = ({ total, name, setID }) => {
 				className="form-select"
 				id={name}
 			>
-				<option defaultValue>Choose...</option>
-				{[...Array(total).keys()].map((x, index) => (
-					<option key={index} value={x + 1}>
-						{name} - {x + 1}
+				<option>Choose...</option>
+				{[...Array(total).keys()].map((e, index) => (
+					<option key={index} value={e + 1}>
+						{name} - {e + 1}
 					</option>
-				))}
+				))}{' '}
 			</select>
 		</div>
 	);
