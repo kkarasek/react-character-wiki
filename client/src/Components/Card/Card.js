@@ -1,13 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './Card.module.scss';
 
-const Card = ({ results }) => {
+const Card = ({ results, page }) => {
 	let display;
 	if (results) {
 		display = results.map((e) => {
 			return (
-				<div key={e.id} className="col-4 mb-4 position-relative">
-					<div className={styles.card}>
+				<Link
+					to={`${page}${e.id}`}
+					key={e.id}
+					className={`col-lg-4 col-md-6 col-sm-12 mb-4 position-relative ${styles.link} text-dark`}
+				>
+					<div
+						className={`d-flex justify-content-center flex-column ${styles.card}`}
+					>
 						<img
 							src={e.image}
 							alt="character-img"
@@ -32,7 +40,7 @@ const Card = ({ results }) => {
 					>
 						{e.status}
 					</div>
-				</div>
+				</Link>
 			);
 		});
 	} else {

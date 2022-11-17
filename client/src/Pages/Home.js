@@ -1,4 +1,6 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+
 import Card from '../Components/Card/Card';
 import Filters from '../Components/Filters/Filters';
 import Pagination from '../Components/Pagination/Pagination';
@@ -46,9 +48,9 @@ const Home = () => {
 						setGender={setGender}
 						setPageNumber={setPageNumber}
 					/>
-					<div className="col-8">
+					<div className="col-lg-8">
 						<div className="row">
-							<Card results={results} />
+							<Card page="/" results={results} />
 						</div>
 					</div>
 				</div>

@@ -42,13 +42,13 @@ const Episodes = () => {
 				</div>
 
 				<div className="row">
-					<div className="col-3 text-center fw-bold fs-4 mb-2">
+					<div className="col-lg-3 col-12 text-center fw-bold fs-4 mb-2">
 						Episodes
 						<InputGroup total={51} name={'Episode'} setID={setID} />
 					</div>
-					<div className="col-8">
+					<div className="col-lg-8">
 						<div className="row">
-							<Card results={results} />
+							<Card page="/episodes/" results={results} />
 						</div>
 					</div>
 				</div>
