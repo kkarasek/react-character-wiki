@@ -11,8 +11,6 @@ const CardDetails = () => {
 
 	const url = `https://rickandmortyapi.com/api/character/${id}`;
 
-	console.log(fetchedData);
-
 	useEffect(() => {
 		(async function () {
 			const response = await fetch(url);
