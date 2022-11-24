@@ -4,7 +4,7 @@ App showcasing Rick and Morty characters.
 
 # Heroku deployment 🌐
 
-Check it [here!](react-character-wiki.herokuapp.com)
+Check it [here!](https://react-character-wiki.herokuapp.com)
 
 # Snippets
 
