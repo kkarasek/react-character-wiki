@@ -11,7 +11,5 @@ Check it [here!](react-character-wiki.herokuapp.com)
 ![alt text][snap-1]
 [snap-1]: /readme_files/snap_1.png 'snap-1'
 
-#### Mobile
-
 ![alt text][snap-2]
 [snap-2]: /readme_files/snap_2.png 'snap-2'
