@@ -5,6 +5,7 @@ import Card from '../Components/Card/Card';
 import Filters from '../Components/Filters/Filters';
 import Pagination from '../Components/Pagination/Pagination';
 import Search from '../Components/Search/Search';
+import AnimatedPage from './AnimatedPage';
 
 const Home = () => {
 	const [pageNumber, setPageNumber] = useState(1);
@@ -38,29 +39,31 @@ const Home = () => {
 	}, [url]);
 
 	return (
-		<div className="App">
-			<Search setSearch={setSearch} setPageNumber={setPageNumber} />
-			<div className="container">
-				<div className="row">
-					<Filters
-						setStatus={setStatus}
-						setSpecies={setSpecies}
-						setGender={setGender}
-						setPageNumber={setPageNumber}
-					/>
-					<div className="col-lg-8">
-						<div className="row">
-							<Card page="/" results={results} />
+		<AnimatedPage>
+			<div className="App">
+				<Search setSearch={setSearch} setPageNumber={setPageNumber} />
+				<div className="container">
+					<div className="row">
+						<Filters
+							setStatus={setStatus}
+							setSpecies={setSpecies}
+							setGender={setGender}
+							setPageNumber={setPageNumber}
+						/>
+						<div className="col-lg-8">
+							<div className="row">
+								<Card page="/" results={results} />
+							</div>
 						</div>
 					</div>
 				</div>
+				<Pagination
+					info={info}
+					pageNumber={pageNumber}
+					setPageNumber={setPageNumber}
+				/>
 			</div>
-			<Pagination
-				info={info}
-				pageNumber={pageNumber}
-				setPageNumber={setPageNumber}
-			/>
-		</div>
+		</AnimatedPage>
 	);
 };
 

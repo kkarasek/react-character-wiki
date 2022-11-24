@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 
 import Card from '../Components/Card/Card';
 import InputGroup from '../Components/InputGroup/InputGroup';
+import AnimatedPage from './AnimatedPage';
 
 const Episodes = () => {
 	const [id, setID] = useState(1);
@@ -27,33 +28,35 @@ const Episodes = () => {
 	}, [url]);
 
 	return (
-		<div className="App">
-			<div className="container">
-				<div className="row m-5">
-					<h1 className="text-center mb-4">
-						<span className="text-primary">
-							{name === '' ? 'unknown' : name}
-						</span>
-					</h1>
-					<h5 className="text-center mb-4">{episode}</h5>
-					<h5 className="text-center">
-						Air Date : {air_date === '' ? 'unknown' : air_date}
-					</h5>
-				</div>
-
-				<div className="row">
-					<div className="col-lg-3 col-12 text-center fw-bold fs-4 mb-2">
-						Episodes
-						<InputGroup total={51} name={'Episode'} setID={setID} />
+		<AnimatedPage>
+			<div className="App">
+				<div className="container">
+					<div className="row m-5">
+						<h1 className="text-center mb-4">
+							<span className="text-primary">
+								{name === '' ? 'unknown' : name}
+							</span>
+						</h1>
+						<h5 className="text-center mb-4">{episode}</h5>
+						<h5 className="text-center">
+							Air Date : {air_date === '' ? 'unknown' : air_date}
+						</h5>
 					</div>
-					<div className="col-lg-8">
-						<div className="row">
-							<Card page="/episodes/" results={results} />
+
+					<div className="row">
+						<div className="col-lg-3 col-12 text-center fw-bold fs-4 mb-2">
+							Episodes
+							<InputGroup total={51} name={'Episode'} setID={setID} />
+						</div>
+						<div className="col-lg-8">
+							<div className="row">
+								<Card page="/episodes/" results={results} />
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</AnimatedPage>
 	);
 };
 
