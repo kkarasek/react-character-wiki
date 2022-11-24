@@ -10,7 +10,7 @@ Check it [here!](react-character-wiki.herokuapp.com)
 
 ![alt text][snap-1]
 
-#### Mobile
+### Mobile
 
 ![alt text][snap-2]
 
