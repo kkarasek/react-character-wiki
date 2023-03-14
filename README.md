@@ -6,7 +6,7 @@ App showcasing Rick and Morty characters.
 
 Check it [here!](https://react-character-wiki.herokuapp.com)
 
-or alternatifely use the [Netlify link](https://react-character-wiki.netlify.app).
+or alternatively use the [Netlify link](https://react-character-wiki.netlify.app).
 
 # Snippets
 
